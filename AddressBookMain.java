@@ -72,7 +72,7 @@ class Person {
             try (Scanner myObject = new Scanner(System.in)) {
                 System.out.println("Enter the name of a person you want to edit");
                 String enteredName = myObject.next();
-                ArrayList<String> book = new ArrayList<String>();
+                ArrayList<String> book = new ArrayList<String>(); //using arraylist
                 for (Person person1 : addressBook) {
                     if (person1.getFirstName().equalsIgnoreCase(enteredName)) {
                         System.out.println("Enter address");

@@ -91,7 +91,21 @@ class Person {
                 }
             }
         }
+
+        public static void deletePerson() {
+            Scanner myObject = new Scanner(System.in);
+            System.out.println("Enter the name you want to delete");
+            String Name = myObject.next();
+            for (Person person1 : addressBook)
+                if (person1.getFirstName().equalsIgnoreCase(Name)) {
+                    addressBook.remove(person1);
+                    System.out.println("Deleted successfully");
+                } else {
+                    System.out.println("Failed to delete person info");
+                }
+        }
     }
+
 
 
 

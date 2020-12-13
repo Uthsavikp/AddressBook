@@ -1,14 +1,5 @@
 import java.util.Scanner;// Import the Scanner class
-//import java.util.HashMap;
 import java.util.ArrayList;
-/*
-public class AddressBookMain {
-    public static void main(String[] args) {
-        System.out.println("Welcome to Address Book Program");
-        AddressBookMain addressBook = new AddressBookMain();
-        addressBook.addPerson();
-    }
-    */
 
 
 class Person {
@@ -46,12 +37,10 @@ class Person {
 
         public static void addPerson() {
             // Using Scanner to input data from user
-            //HashMap<String, String> hmap = new HashMap<>();
             ArrayList<String> book = new ArrayList<String>();
             Scanner myObject = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter first name");
-            String firstName = myObject.next(); // Reading user input
-            //book.add(myObject.next());
+            String firstName = myObject.next(); // Reading user inputy
             System.out.println("First name is: " + firstName); // Output user input
             System.out.println("Enter last name");
             String lastName = myObject.next();

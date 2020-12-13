@@ -36,9 +36,35 @@ class Person {
             System.out.println("Welcome to Address Book Program");
             AddressBookMain addressBook = new AddressBookMain();
             addressBook.addPerson();
+
+            System.out.println("\n 1.Edit \n 2.Delete \n 3.Multiple Entry \n 4.Display Entries");
+            Scanner myObject = new Scanner(System.in);
+            switch (myObject.nextInt()) {
+
+                case 1:
+                    System.out.println("Edit Existing Information About A Person");
+                    editPerson();
+                    break;
+                case 2:
+                    System.out.println("Delete Existing Information About A Person");
+                    deletePerson();
+                    break;
+                case 3:
+                    System.out.println("Add A New Person");
+                    addPerson();
+                    break;
+                case 4:
+                    System.out.println("Display Entries In Address Book");
+                    displayPerson();
+                    break;
+                default:
+                    System.out.println("Error:Enter A Valid Input");
+                    break;
+            }
         }
 
-        public void addPerson() {
+
+        public static void addPerson() {
             // Using Scanner to input data from user
             Scanner myObject = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter first name");
@@ -68,7 +94,7 @@ class Person {
         }
 
 
-        public void editPerson() {
+        public static void editPerson() {
             try (Scanner myObject = new Scanner(System.in)) {
                 System.out.println("Enter the name of a person you want to edit");
                 String enteredName = myObject.next();
@@ -103,6 +129,12 @@ class Person {
                 } else {
                     System.out.println("Failed to delete person info");
                 }
+        }
+        public static void displayPerson(){
+            System.out.println("Entries In Address Book");
+            for (Person person2 : addressBook){
+                System.out.println(person2);
+            }
         }
     }
 

@@ -1,12 +1,22 @@
+import java.util.Scanner;// Import the Scanner class
+//import java.util.HashMap;
+import java.util.ArrayList;
+/*
 public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program");
+        AddressBookMain addressBook = new AddressBookMain();
+        addressBook.addPerson();
     }
-}
-class Person{
+    */
+
+
+class Person {
+
     // variables
     public String firstName, lastName, address, city, state;
     public int zip, phoneNumber;
+
 
     //constructor
     public Person(String firstName, String lastName, String address, String city, String state, int zip, int phoneNumber) {
@@ -18,4 +28,52 @@ class Person{
         this.zip = zip;
         this.phoneNumber = phoneNumber;
     }
+
+    public Person() {
+
+    }
 }
+    public class AddressBookMain {
+        static ArrayList<Person> addressBook = new ArrayList<Person>();
+
+        public static void main(String[] args) {
+            System.out.println("Welcome to Address Book Program");
+            AddressBookMain addressBook = new AddressBookMain();
+            addressBook.addPerson();
+        }
+
+
+
+        public static void addPerson() {
+            // Using Scanner to input data from user
+            //HashMap<String, String> hmap = new HashMap<>();
+            ArrayList<String> book = new ArrayList<String>();
+            Scanner myObject = new Scanner(System.in); // Create a Scanner object
+            System.out.println("Enter first name");
+            String firstName = myObject.next(); // Reading user input
+            //book.add(myObject.next());
+            System.out.println("First name is: " + firstName); // Output user input
+            System.out.println("Enter last name");
+            String lastName = myObject.next();
+            System.out.println("Last name is: " + lastName);
+            System.out.println("Enter address");
+            String address = myObject.next();
+            System.out.println("Address is: " + address);
+            System.out.println("Enter city");
+            String city = myObject.next();
+            System.out.println("City is: " + city);
+            System.out.println("Enter state");
+            String state = myObject.next();
+            System.out.println("State name is: " + state);
+            System.out.println("Enter zip");
+            int zip = myObject.nextInt();
+            System.out.println("Zip code is: " + zip);
+            System.out.println("Enter phone number");
+            int phoneNumber = myObject.nextInt();
+            System.out.println("Phone number is: " + phoneNumber);
+            Person person = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
+            addressBook.add(person);
+            System.out.println(person);
+        }
+    }
+

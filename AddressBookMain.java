@@ -1,7 +1,6 @@
 import java.util.Scanner;// Import the Scanner class
 import java.util.ArrayList;
 
-
 class Person {
 
     // variables
@@ -23,6 +22,12 @@ class Person {
     public Person() {
 
     }
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    public String getFirstName(){
+        return firstName;
+    }
 }
     public class AddressBookMain {
         static ArrayList<Person> addressBook = new ArrayList<Person>();
@@ -33,14 +38,11 @@ class Person {
             addressBook.addPerson();
         }
 
-
-
-        public static void addPerson() {
+        public void addPerson() {
             // Using Scanner to input data from user
-            ArrayList<String> book = new ArrayList<String>();
             Scanner myObject = new Scanner(System.in); // Create a Scanner object
             System.out.println("Enter first name");
-            String firstName = myObject.next(); // Reading user inputy
+            String firstName = myObject.next(); // Reading user input
             System.out.println("First name is: " + firstName); // Output user input
             System.out.println("Enter last name");
             String lastName = myObject.next();
@@ -64,5 +66,33 @@ class Person {
             addressBook.add(person);
             System.out.println(person);
         }
+
+
+        public void editPerson() {
+            try (Scanner myObject = new Scanner(System.in)) {
+                System.out.println("Enter the name of a person you want to edit");
+                String enteredName = myObject.next();
+                ArrayList<String> book = new ArrayList<String>();
+                for (Person person1 : addressBook) {
+                    if (person1.getFirstName().equalsIgnoreCase(enteredName)) {
+                        System.out.println("Enter address");
+                        book.add(myObject.next());
+                        System.out.println("Enter city");
+                        book.add(myObject.next());
+                        System.out.println("Enter state");
+                        book.add(myObject.next());
+                        System.out.println("Enter zip");
+                        book.add(myObject.next());
+                        System.out.println("Enter phone Number");
+                        book.add(myObject.next());
+                    } else {
+                        System.out.println("The Person does not exist");
+                    }
+                }
+            }
+        }
     }
+
+
+
 
